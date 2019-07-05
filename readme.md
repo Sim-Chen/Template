@@ -1,1 +1,1 @@
-C++ template 笔记
+C++ template

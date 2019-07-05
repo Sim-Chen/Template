@@ -2,7 +2,6 @@
 
 int max(int a,int b)
 {
-std::cout<<"call nontemplate for two ints"<<std::endl;
     return b<a?a:b;
 }
 
