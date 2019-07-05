@@ -2,6 +2,7 @@
 #include<vector>
 #include<cassert>
 #include<string>
+#include<deque>
 template<typename T,typename Container=std::vector<T>>
 class Stack
 {
@@ -15,7 +16,7 @@ public:
     T const & top()const;
     bool empty()const{return elems.empty();}
     template<typename U>
-    friend std::ostream& operator<<(std::ostream &os,Stack<U> const &s)
+    friend std::ostream& operator<<(std::ostream &os,Stack<U,Container> const &s)
     {
         for(auto i:s.elems)
             std::cout<<i<<" ";
@@ -52,6 +53,10 @@ int main()
     int_Stack.push(2);
     int_Stack.push(3);
     std::cout<<int_Stack<<std::endl;
-
+    Stack<int ,std::deque<int>> S2;
+    S2.push(3);
+    S2.push(2);
+    S2.push(1);
+    std::cout<<S2<<std::endl;
     return 0;
 }
